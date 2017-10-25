@@ -1,9 +1,7 @@
 # fars
 
 ```
-install.packages("devtools")
-library("devtools")
-devtools::install_github("balajiambreshrajkumar/fars", buildVignettes=TRUE)
+devtools::install_github("balajiambreshrajkumar/fars", build_vignettes=TRUE, force=TRUE)
 browseVignettes("fars")
 ```
 
