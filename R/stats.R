@@ -1,11 +1,11 @@
 library(dplyr)
 
 #' Creates a summary of number of fars records per month for each year.
-#' @importMethodsFrom  dplyr bind_rows
-#' @importMethodsFrom dplyr group_by
-#' @importMethodsFrom dplyr summarize
-#' @importMethodsFrom tidyr spread
-#' @importMethodsFrom magrittr %>%
+#' @importFrom  dplyr bind_rows
+#' @importFrom dplyr group_by
+#' @importFrom dplyr summarize
+#' @importFrom tidyr spread
+#' @importFrom magrittr %>%
 #' @param years: A vector of integer years
 #' @return A data frame of the counts of number of fars records per year.
 #' Months are numbered between 1 and 12 (both ends included) and the counts
@@ -40,8 +40,8 @@ fars_summarize_years <- function(years) {
 
 #' Shows a graphic of the points where accidents took place
 #' for the given state number for the given year.
-#' @importMethodsFrom dplyr filter
-#' @importMethodsFrom maps map
+#' @importFrom dplyr filter
+#' @importFrom maps map
 #' @importFrom  graphics points
 #' @param state.num: Integer ID of the state.
 #' @param year: Integer year.

@@ -2,8 +2,8 @@ library(dplyr)
 
 #' Create a dataframe table from the given csv filename.
 #' Should the filename not exist, then, an error is raised.
-#' @importMethodsFrom readr read_csv
-#' @importMethodsFrom  dplyr tbl_df
+#' @importFrom readr read_csv
+#' @importFrom  dplyr tbl_df
 #' @note No progress bar will be shown while reading the file.
 #' @param filename: The file to read from.
 #' @return dplyr tbl_df instance of the file content.
@@ -38,9 +38,9 @@ make_filename <- function(year) {
 #' Each year would have a filename of the form \code{accident_<year>.csv.bz2}
 #' @note This call assumes that the data files are
 #' directly accessible under the current directory. Use \code{getwd()} to confirm.
-#' @importMethodsFrom dplyr select
-#' @importMethodsFrom dplyr mutate
-#' @importMethodsFrom magrittr %>%
+#' @importFrom dplyr select
+#' @importFrom dplyr mutate
+#' @importFrom magrittr %>%
 #' @param years: A vector of integer years
 #' @return list of dplyr tbl_df instances each for the year. If data for the year
 #' specified cannot be found, a warning is printed and NULL is returned for that entry
