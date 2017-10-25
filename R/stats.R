@@ -41,7 +41,6 @@ fars_summarize_years <- function(years) {
 #' Shows a graphic of the points where accidents took place
 #' for the given state number for the given year.
 #' @importMethodsFrom dplyr filter
-#' @importMethodsFrom magrittr %>%
 #' @importMethodsFrom maps map
 #' @importFrom  graphics points
 #' @param state.num: Integer ID of the state.
