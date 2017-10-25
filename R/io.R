@@ -5,13 +5,14 @@
 #' @note No progress bar will be shown while reading the file.
 #' @param filename: The file to read from.
 #' @return dplyr tbl_df instance of the file content.
-#' @examples
+#' @examples \dontrun {
 #' csv <- fars_read('avalid_filename.csv')
 #' > class(csv)
 #' [1] "tbl_df"     "tbl"        "data.frame"
 #' invalid <- fars_read('does_not_exist.csv')
 #' Error in fars_read("does_not_exist.csv") :
 #'  file 'does_not_exist.csv' does not exist
+#' }
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
