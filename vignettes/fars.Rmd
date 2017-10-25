@@ -11,10 +11,9 @@ vignette: >
 ## About
 This is a library for using [fars data](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars)
 
-```{r}
-library(fars)
+```{r, eval=FALSE}
 # To create a summary of number of accident records per year, use
-summary <- fars_summarize_years(c(2013, 2015))
+summary <- fars::fars_summarize_years(c(2013, 2015))
 # To craete a map of where accidents happened within a state for a particular year, use
-fars_map_state(state.num = 1, year = 2013)
+fars::fars_map_state(state.num = 1, year = 2013)
 ```

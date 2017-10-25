@@ -3,9 +3,9 @@
 #' @importFrom readr read_csv
 #' @importFrom  dplyr tbl_df
 #' @note No progress bar will be shown while reading the file.
-#' @param filename: The file to read from.
+#' @param filename The file to read from.
 #' @return dplyr tbl_df instance of the file content.
-#' @examples \dontrun {
+#' @examples \dontrun{
 #' csv <- fars_read('avalid_filename.csv')
 #' > class(csv)
 #' [1] "tbl_df"     "tbl"        "data.frame"
@@ -23,11 +23,10 @@ fars_read <- function(filename) {
 }
 
 #' Create a file name for reading using \code{fars_read} method
-#' @param year: Integer year.
+#' @param year Integer year.
 #' @return Formatted filename of the form \code{accident_<year>.csv.bz2}
-#' @examples
-#' > make_filename(2017)
-#' [1] "accident_2017.csv.bz2"
+#' @example
+#' make_filename(2017)
 make_filename <- function(year) {
   year <- as.integer(year)
   sprintf("accident_%d.csv.bz2", year)
@@ -37,14 +36,15 @@ make_filename <- function(year) {
 #' Each year would have a filename of the form \code{accident_<year>.csv.bz2}
 #' @note This call assumes that the data files are
 #' directly accessible under the current directory. Use \code{getwd()} to confirm.
+#' @note MONTH refers to the numeric representation with January being 1.
 #' @importFrom dplyr select
 #' @importFrom dplyr mutate
 #' @importFrom magrittr %>%
-#' @param years: A vector of integer years
+#' @param years A vector of integers
 #' @return list of dplyr tbl_df instances each for the year. If data for the year
 #' specified cannot be found, a warning is printed and NULL is returned for that entry
 #' in the year.
-#' @examples
+#' @examples \dontrun{
 #' data <- fars_read_years(c(2014, 2015, 2021))
 #' Warning message:
 #' In value[[3L]](cond) : invalid year: 2021
@@ -84,7 +84,9 @@ make_filename <- function(year) {
 #' > head(data[3])
 #' [[1]]
 #' NULL
+#' }
 fars_read_years <- function(years) {
+  MONTH <- NULL
   lapply(years, function(year) {
     file <- make_filename(year)
     tryCatch({

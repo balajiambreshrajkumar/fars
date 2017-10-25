@@ -7,15 +7,11 @@
 make_filename(year)
 }
 \arguments{
-\item{year:}{Integer year.}
+\item{year}{Integer year.}
 }
 \value{
 Formatted filename of the form \code{accident_<year>.csv.bz2}
 }
 \description{
 Create a file name for reading using \code{fars_read} method
-}
-\examples{
-> make_filename(2017)
-[1] "accident_2017.csv.bz2"
 }

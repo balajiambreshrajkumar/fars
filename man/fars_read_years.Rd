@@ -8,7 +8,7 @@ Each year would have a filename of the form \code{accident_<year>.csv.bz2}}
 fars_read_years(years)
 }
 \arguments{
-\item{years:}{A vector of integer years}
+\item{years}{A vector of integers}
 }
 \value{
 list of dplyr tbl_df instances each for the year. If data for the year
@@ -22,8 +22,11 @@ Each year would have a filename of the form \code{accident_<year>.csv.bz2}
 \note{
 This call assumes that the data files are
 directly accessible under the current directory. Use \code{getwd()} to confirm.
+
+MONTH refers to the numeric representation with January being 1.
 }
 \examples{
+\dontrun{
 data <- fars_read_years(c(2014, 2015, 2021))
 Warning message:
 In value[[3L]](cond) : invalid year: 2021
@@ -63,4 +66,5 @@ MONTH  year
 > head(data[3])
 [[1]]
 NULL
+}
 }

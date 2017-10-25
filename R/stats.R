@@ -4,12 +4,12 @@
 #' @importFrom dplyr summarize
 #' @importFrom tidyr spread
 #' @importFrom magrittr %>%
-#' @param years: A vector of integer years
+#' @importFrom dplyr n
+#' @param years A vector of integer years
 #' @return A data frame of the counts of number of fars records per year.
-#' Months are numbered between 1 and 12 (both ends included) and the counts
-#' are present under the years column. Invalid year entries are left out of the summary.
-#' @examples \dontrun {
-#' > ret <- fars_summarize_years(c(2013, 2015, 2021))
+#' Counts are present under the years column. Invalid year entries are left out of the summary.
+#' @examples \dontrun{
+#' ret <- fars_summarize_years(c(2013, 2015, 2021))
 #' Warning message:
 #'   In value[[3L]](cond) : invalid year: 2021
 #' > ret
@@ -31,6 +31,8 @@
 #' }
 #' @export
 fars_summarize_years <- function(years) {
+  MONTH <- NULL
+  year <- NULL
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
@@ -43,12 +45,12 @@ fars_summarize_years <- function(years) {
 #' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom  graphics points
-#' @param state.num: Integer ID of the state.
-#' @param year: Integer year.
+#' @param state.num Integer ID of the state.
+#' @param year Integer year.
 #' @return NULL
 #' @note Rasies an error if the state number is absent in the
 #' year fars dataset or the fars data file for the year is absent.
-#' @examples \dontrun {
+#' @examples \dontrun{
 #' fars_map_state(1, 2021)
 #' Error in fars_read(filename) :
 #'  file 'accident_2021.csv.bz2' does not exist
@@ -58,9 +60,11 @@ fars_summarize_years <- function(years) {
 #'
 #' fars_map_state(1, 2013)
 #' <shows image>
-#'}
+#' }
 #' @export
 fars_map_state <- function(state.num, year) {
+  STATE <- NULL
+  MONTH <- NULL
   filename <- make_filename(year)
   data <- fars_read(filename)
   state.num <- as.integer(state.num)

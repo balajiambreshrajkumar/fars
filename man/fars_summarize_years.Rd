@@ -7,18 +7,18 @@
 fars_summarize_years(years)
 }
 \arguments{
-\item{years:}{A vector of integer years}
+\item{years}{A vector of integer years}
 }
 \value{
 A data frame of the counts of number of fars records per year.
-Months are numbered between 1 and 12 (both ends included) and the counts
-are present under the years column. Invalid year entries are left out of the summary.
+Counts are present under the years column. Invalid year entries are left out of the summary.
 }
 \description{
 Creates a summary of number of fars records per month for each year.
 }
 \examples{
-> ret <- fars_summarize_years(c(2013, 2015, 2021))
+\dontrun{
+ret <- fars_summarize_years(c(2013, 2015, 2021))
 Warning message:
   In value[[3L]](cond) : invalid year: 2021
 > ret
@@ -37,5 +37,5 @@ MONTH `2013` `2015`
 10    10   2768   3019
 11    11   2615   2724
 12    12   2457   2781
-
+}
 }

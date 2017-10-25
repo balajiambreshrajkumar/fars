@@ -8,9 +8,9 @@ for the given state number for the given year.}
 fars_map_state(state.num, year)
 }
 \arguments{
-\item{state.num:}{Integer ID of the state.}
+\item{state.num}{Integer ID of the state.}
 
-\item{year:}{Integer year.}
+\item{year}{Integer year.}
 }
 \description{
 Shows a graphic of the points where accidents took place
@@ -21,6 +21,7 @@ Rasies an error if the state number is absent in the
 year fars dataset or the fars data file for the year is absent.
 }
 \examples{
+\dontrun{
 fars_map_state(1, 2021)
 Error in fars_read(filename) :
  file 'accident_2021.csv.bz2' does not exist
@@ -30,5 +31,5 @@ Error in fars_map_state(1000, 2013) : invalid STATE number: 1000
 
 fars_map_state(1, 2013)
 <shows image>
-
+}
 }
