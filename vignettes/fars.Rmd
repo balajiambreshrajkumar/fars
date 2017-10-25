@@ -14,6 +14,6 @@ This is a library for using [fars data](https://www.nhtsa.gov/research-data/fata
 ```{r, eval=FALSE}
 # To create a summary of number of accident records per year, use
 summary <- fars::fars_summarize_years(c(2013, 2015))
-# To craete a map of where accidents happened within a state for a particular year, use
+# To create a map of where accidents happened within a state for a particular year, use
 fars::fars_map_state(state.num = 1, year = 2013)
 ```
