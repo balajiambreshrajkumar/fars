@@ -1,0 +1,10 @@
+Package: fars
+Title: Library for interacting with fars data.
+Version: 0.0.0.9000
+Authors@R: person("Balaji Ambresh", "Rajkumar", email = "sample_mail@domain.com", role = c("aut", "cre"))
+Description: Functions for reading fars data and obtaining statistics from the dataset.
+Depends: R (>= 3.4.2), dplyr(>= 0.7.4)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
