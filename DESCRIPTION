@@ -1,5 +1,5 @@
 Package: fars
-Title: fars
+Title: A Fality Analysis Reporting System package
 Version: 0.0.0.9000
 Authors@R: person("Balaji Ambresh", "Rajkumar", email = "balaji.ambresh@nym.hush.com", role = c("aut", "cre"))
 Description: Functions for reading fars data and obtaining statistics from the dataset.

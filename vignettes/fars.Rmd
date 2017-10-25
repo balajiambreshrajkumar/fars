@@ -3,7 +3,7 @@ title: "fars Usage"
 author: "Balaji Ambresh Rajkumar"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{fars}
+  %\VignetteIndexEntry{Using fars}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
