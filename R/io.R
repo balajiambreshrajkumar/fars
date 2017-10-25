@@ -1,5 +1,3 @@
-library(dplyr)
-
 #' Create a dataframe table from the given csv filename.
 #' Should the filename not exist, then, an error is raised.
 #' @importFrom readr read_csv

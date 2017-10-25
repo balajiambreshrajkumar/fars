@@ -1,5 +1,3 @@
-library(dplyr)
-
 #' Creates a summary of number of fars records per month for each year.
 #' @importFrom  dplyr bind_rows
 #' @importFrom dplyr group_by
@@ -30,6 +28,8 @@ library(dplyr)
 #' 10    10   2768   3019
 #' 11    11   2615   2724
 #' 12    12   2457   2781
+#'
+#' @export
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
@@ -58,6 +58,8 @@ fars_summarize_years <- function(years) {
 #'
 #' fars_map_state(1, 2013)
 #' <shows image>
+#'
+#' @export
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)
   data <- fars_read(filename)
